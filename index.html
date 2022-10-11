@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href ="/css/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="title">
+            <h1>Bookshelf</h1>
+            <img src="/assets/title.svg" alt="" />
+        </div>
+    </header>
+    
+    <main class="content"> 
+        <section id="inputSection" class="input-section">
+            <div class="input-head">
+                <h2>Add a book</h2>
+            </div>
+        <form id="inputBook">
+            <div class="input-item col">
+                <label for="inputBookTitle">Title</label>
+                <input id="inputBookTitle" type="text" required>
+            </div>
+            <div class="input-item col">
+                <label for="inputBookAuthor">Author</label>
+                <input id="inputBookAuthor" type="text" required>
+            </div>
+            <div class="input-item row">
+                <label for="inputBookYear">Year</label>
+                <input id="inputBookYear" type="number" required>
+            </div>
+            <div class="input-item row">
+                <label for="inputBookIsComplete">Is Complete</label>
+                <input id="inputBookIsComplete" type="checkbox">
+            </div>
+            <button type="submit">Add Book</button>
+        </form>
+        </section>
+
+        <section class="bookshelf-section">
+            <div class="bookshelf-filter">
+                <button id="showInput">
+                    <p>New Book</p>
+                </button>
+
+                <button class="filter-book filter-active" onclick="filterBookshelf('all')">
+                    <div class="search-book">
+                        <label for="searchBookTitle">
+                            <img src="/assets/search.svg" alt="search" class="icon">
+                        </label>
+                        <input id="searchBookTitle" type="text" placeholder="Search...">
+                    </div>
+                </button>
+            </div>
+
+            <div class="bookshelf-list">
+                <div id="incompleteBookshelf" class="bookshelf-item">
+                    <h2>Incomplete Bookshelf</h2>
+                    <div id="incompleteBookList" class="book-list">
+                    </div>
+                </div>
+
+                <div id="completeBookshelf" class="bookshelf-item">
+                    <h2>Complete Bookshelf</h2>
+                    <div id="completeBookList" class="book-list">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/js/dom.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>
